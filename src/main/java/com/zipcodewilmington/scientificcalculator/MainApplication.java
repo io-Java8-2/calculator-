@@ -1,5 +1,8 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import static com.zipcodewilmington.scientificcalculator.CorePackage.addition;
+import static com.zipcodewilmington.scientificcalculator.Memory.*;
+
 /**
  * Created by leon on 2/9/18.
  */
@@ -11,6 +14,7 @@ public class MainApplication {
         String userChoice = "";
         String funcChoice = "";
         double userInput = 0;
+        double currentMemoryValue = 0;
 
         Console.println("Welcome to my calculator!");
         /*
@@ -47,6 +51,17 @@ public class MainApplication {
             else if(funcChoice.equals("square root")){
 
             }
+            else if(funcChoice.equals("ms")){
+                currentMemoryValue = saveToMemory(currentMemoryValue,displayNumber);
+                Console.println("Value saved to memory");
+            }
+            else if(funcChoice.equals("mr")){
+                currentMemoryValue = resetMemory(currentMemoryValue);
+                Console.println("Memory was reset");
+            }
+            else if (funcChoice.equals("mc")){
+                displayNumber = recallMemory(currentMemoryValue);
+            }
             else if(funcChoice.equals("exit")){
                 endCalc = false;
             }
@@ -57,44 +72,6 @@ public class MainApplication {
 
         }
 
-    }
-
-    public static double addition(double x, double y){
-        return x + y;
-    }
-
-    public static double getDegSine(double displayNumber){
-        double result = Math.sin(displayNumber);
-        Console.println("The sine of " + displayNumber + " in degrees is " + result);
-        return result;
-    }
-
-    public static double getDegSineInv(double displayNumber){
-        double result = Math.asin(displayNumber);
-        Console.println("The inverse sine of " + displayNumber + " in degrees is " + result);
-        return result;
-    }
-
-    public static double getDegCosine(double displayNumber){
-        double result = Math.cos(displayNumber);
-        Console.println("The cosine of " + displayNumber + " in degrees is " + result);
-        return result;
-    }
-
-    public static double getDegCosineInv(double displayNumber){
-        double result = Math.acos(displayNumber);
-        Console.println("The inverse cosine of " + displayNumber + " in degrees is " + result);
-        return result;
-    }
-
-    public static double getDegTangent(double displayNumber){
-        double result = Math.tan(displayNumber);
-        Console.println("The tangent of " + displayNumber + " in degrees is " + result);
-        return result;
-    }
-
-    public static int switchUnitsMode(){
-        return 0;
     }
 
 }
