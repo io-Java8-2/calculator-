@@ -6,6 +6,7 @@ package com.zipcodewilmington.scientificcalculator;
 public class MainApplication {
     double displayNumber = 0;
     boolean endCalc = false;
+    double currentMemoryValue = 0;
     String userChoice;
 
     int switchChoice = 0;
@@ -42,6 +43,9 @@ public class MainApplication {
             }
             else if(userChoice.equals("square root")){
 
+            }else if(userChoice.equals("ms")){
+                saveToMemory();
+                Console.println("Value saved to memory");
             }
             else{
                 Console.println("Please enter a valid function");
@@ -49,5 +53,14 @@ public class MainApplication {
 
 
         }
+    }
+    public void saveToMemory() {
+        currentMemoryValue = displayNumber;
+    }
+    public void resetMemory(){
+        currentMemoryValue = 0;
+    }
+    public double recallMemory(){
+        return currentMemoryValue;
     }
 }
