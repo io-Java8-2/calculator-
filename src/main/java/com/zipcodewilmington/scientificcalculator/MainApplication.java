@@ -46,6 +46,11 @@ public class MainApplication {
             }else if(userChoice.equals("ms")){
                 saveToMemory();
                 Console.println("Value saved to memory");
+            }else if(userChoice.equals("mr")){
+                resetMemory();
+                Console.println("Memory was reset");
+            }else if (userChoice.equals("mc")){
+                recallMemory();
             }
             else{
                 Console.println("Please enter a valid function");
