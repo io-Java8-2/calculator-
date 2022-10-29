@@ -4,13 +4,15 @@ package com.zipcodewilmington.scientificcalculator;
  * Created by leon on 2/9/18.
  */
 public class MainApplication {
-    double displayNumber = 0;
-    boolean endCalc = false;
-    double currentMemoryValue = 0;
-    String userChoice;
 
-    int switchChoice = 0;
-    public void main(String[] args) {
+    public static void main(String[] args) {
+        double displayNumber = 0;
+
+        boolean runCalc = true;
+        double currentMemoryValue = 0;
+        String userChoice = "";
+        String currentDisplayMode = "";
+        int switchChoice = 0;
         Console.println("Welcome to my calculator!");
         /*
         String s = Console.getStringInput("Enter a string");
@@ -21,7 +23,7 @@ public class MainApplication {
         Console.println("The user input %s as a integer", i);
         Console.println("The user input %s as a d", d);
         */
-        while (endCalc = false){
+        while (runCalc = true){
             Console.println("Current number: " + displayNumber);
             Console.println("What operation should be done with the number?");
             Console.getStringInput(userChoice);
@@ -44,13 +46,13 @@ public class MainApplication {
             else if(userChoice.equals("square root")){
 
             }else if(userChoice.equals("ms")){
-                saveToMemory();
+                saveToMemory(currentMemoryValue,displayNumber);
                 Console.println("Value saved to memory");
             }else if(userChoice.equals("mr")){
-                resetMemory();
+                resetMemory(currentMemoryValue);
                 Console.println("Memory was reset");
             }else if (userChoice.equals("mc")){
-                recallMemory();
+                recallMemory(currentMemoryValue);
             }
             else{
                 Console.println("Please enter a valid function");
@@ -59,13 +61,16 @@ public class MainApplication {
 
         }
     }
-    public void saveToMemory() {
+    public static void saveToMemory(double currentMemoryValue, double displayNumber) { // saves current mem value
         currentMemoryValue = displayNumber;
     }
-    public void resetMemory(){
+    public static void resetMemory(double currentMemoryValue){ //reset memory
         currentMemoryValue = 0;
     }
-    public double recallMemory(){
+    public static double recallMemory(double currentMemoryValue){
         return currentMemoryValue;
+    }
+    public void changeDisplayMode(){
+
     }
 }
