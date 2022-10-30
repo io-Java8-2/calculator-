@@ -73,9 +73,18 @@ public class Trig {
         return result;
     }
 
-    /*
+
     public static double getFactorial(double x){
-        return 0;
+        double factorial = x;
+//        for (double i = 2; i <= x; i ++){
+//            factorial = factorial * i;
+//        }
+        double i = 2;
+        while(i < x){
+            factorial *= i;
+            i++;
+        }
+        return factorial;
     }
-    */
+
 }
