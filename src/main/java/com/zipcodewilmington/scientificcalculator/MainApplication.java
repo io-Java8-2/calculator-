@@ -1,6 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 
-import static com.zipcodewilmington.scientificcalculator.CorePackage.addition;
+import static com.zipcodewilmington.scientificcalculator.CorePackage.*;
 import static com.zipcodewilmington.scientificcalculator.Memory.*;
 import static com.zipcodewilmington.scientificcalculator.Trig.*;
 
@@ -15,6 +15,7 @@ public class MainApplication {
         String userChoice = "";
         String funcChoice = "";
         double userInput = 0;
+        double userInput2 = 0;
         double currentMemoryValue = 0;
 
         Console.println("Welcome to the Io calculator!");
@@ -38,7 +39,8 @@ public class MainApplication {
 
             }
             else if(funcChoice.equals("subtract")){
-
+                userInput = Console.getDoubleInput("Please enter a number to subtract from " + displayNumber);
+                displayNumber = subtraction(displayNumber, userInput);
             }
             else if(funcChoice.equals("multiply")){
 
