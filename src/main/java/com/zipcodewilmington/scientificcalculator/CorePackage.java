@@ -4,6 +4,12 @@ public class CorePackage {
     public static double addition(double x, double y){
         return x + y;
     }
+
+    public static double subtraction(double x, double y){return x = x - y;}
+
+    public static double multiplicaton(double x, double y){return x = x * y;}
+
+    public static double division(double x, double y){return x = x / y;}
     public static double sqrt(double x){ return x =  Math.sqrt(x);}
 
     public static double sq(double x){return x =  x * x;}
