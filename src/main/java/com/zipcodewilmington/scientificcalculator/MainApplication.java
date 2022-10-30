@@ -63,6 +63,7 @@ public class MainApplication {
                 displayNumber = recallMemory(currentMemoryValue);
             }
             else if(funcChoice.equals("exit")){
+                Console.println("Goodbye!");
                 endCalc = false;
             }
             else{

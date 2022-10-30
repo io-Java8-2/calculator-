@@ -1,33 +1,81 @@
 package com.zipcodewilmington.scientificcalculator;
+import java.text.DecimalFormat;
 
 public class Trig {
-    public static double getDegSine(double displayNumber){
-        double result = Math.sin(displayNumber);
-        Console.println("The sine of " + displayNumber + " in degrees is " + result);
+
+    public static double getRadSine(double x){
+        double result = Math.sin(x);
+        double rounded = Math.round(result*1000000.0)/1000000.0;
+        Console.println("The sine of " + x + " in radians is " + rounded);
+        return rounded;
+    }
+
+    public static double getRadArcSine(double x){
+        double result = Math.asin(x);
+        double rounded = Math.round(result*1000000.0)/1000000.0;
+        Console.println("The arc sine of " + x + " in radians is " + rounded);
+        return rounded;
+    }
+
+    public static double getRadCosine(double x){
+        double result = Math.cos(x);
+        double rounded = Math.round(result*1000000.0)/1000000.0;
+        Console.println("The cosine of " + x + " in radians is " + rounded);
+        return rounded;
+    }
+
+    public static double getRadArcCosine(double x){
+        double result = Math.acos(x);
+        double rounded = Math.round(result*1000000.0)/1000000.0;
+        Console.println("The arc cosine of " + x + " in radians is " + rounded);
+        return rounded;
+    }
+
+    public static double getRadTangent(double x){
+        double result = Math.tan(x);
+        double rounded = Math.round(result*1000000.0)/1000000.0;
+        Console.println("The tangent of " + x + " in radians is " + rounded);
+        return rounded;
+    }
+
+    public static double getRadArcTangent(double x){
+        double result = Math.atan(x);
+        double rounded = Math.round(result*1000000.0)/1000000.0;
+        Console.println("The inverse tangent of " + x + " in radians is " + rounded);
+        return rounded;
+    }
+
+    public static double getLog(double x){
+        double result = Math.log10(x);
+        double rounded = Math.round(result*1000000.0)/1000000.0;
+        Console.println("The logarithm of " + x + " is " + rounded);
+        return rounded;
+    }
+
+    public static double getNatLog(double x){
+        double result = Math.log(x);
+        double rounded = Math.round(result*1000000.0)/1000000.0;
+        Console.println("The logarithm of " + x + " is " + rounded);
+        return rounded;
+    }
+
+    public static double getInvLog(double x){
+        double result = Math.pow(10,x);
+        DecimalFormat numFormat = new DecimalFormat("0.######E0");
+        Console.println("The inverse logarithm of " + x + " is " + numFormat.format(result));
         return result;
     }
 
-    public static double getDegSineInv(double displayNumber){
-        double result = Math.asin(displayNumber);
-        Console.println("The inverse sine of " + displayNumber + " in degrees is " + result);
+    public static double getInvNatLog(double x){
+        double result = Math.exp(x);
+        DecimalFormat numFormat = new DecimalFormat("0.######E0");
+        Console.println("The inverse natural logarithm of " + x + " is " + numFormat.format(result));
         return result;
     }
 
-    public static double getDegCosine(double displayNumber){
-        double result = Math.cos(displayNumber);
-        Console.println("The cosine of " + displayNumber + " in degrees is " + result);
-        return result;
+    /*
+    public static double getFactorial(double x){
+        return 0;
     }
-
-    public static double getDegCosineInv(double displayNumber){
-        double result = Math.acos(displayNumber);
-        Console.println("The inverse cosine of " + displayNumber + " in degrees is " + result);
-        return result;
-    }
-
-    public static double getDegTangent(double displayNumber){
-        double result = Math.tan(displayNumber);
-        Console.println("The tangent of " + displayNumber + " in degrees is " + result);
-        return result;
-    }
+    */
 }
