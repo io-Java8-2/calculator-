@@ -7,7 +7,7 @@ public class CorePackage {
 
     public static double subtraction(double x, double y){return x = x - y;}
 
-    public static double multiplicaton(double x, double y){return x = x * y;}
+    public static double multiplication(double x, double y){return x = x * y;}
 
     public static double division(double x, double y){return x = x / y;}
     public static double sqrt(double x){ return x =  Math.sqrt(x);}
