@@ -76,6 +76,7 @@ public class Trig {
 
     public static double getFactorial(double x){
         double factorial = x;
+
 //        for (double i = 2; i <= x; i ++){
 //            factorial = factorial * i;
 //        }
@@ -84,6 +85,7 @@ public class Trig {
             factorial *= i;
             i++;
         }
+        Console.println("The factorial of " + x + " is " + factorial);
         return factorial;
     }
 

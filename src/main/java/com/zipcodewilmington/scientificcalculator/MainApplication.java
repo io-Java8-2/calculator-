@@ -2,6 +2,7 @@ package com.zipcodewilmington.scientificcalculator;
 
 import static com.zipcodewilmington.scientificcalculator.CorePackage.addition;
 import static com.zipcodewilmington.scientificcalculator.Memory.*;
+import static com.zipcodewilmington.scientificcalculator.Trig.*;
 
 /**
  * Created by leon on 2/9/18.
@@ -16,7 +17,7 @@ public class MainApplication {
         double userInput = 0;
         double currentMemoryValue = 0;
 
-        Console.println("Welcome to my calculator!");
+        Console.println("Welcome to the Io calculator!");
         /*
         String s = Console.getStringInput("Enter a string");
         Integer i = Console.getIntegerInput("Enter an integer");
@@ -28,21 +29,21 @@ public class MainApplication {
         */
         while (endCalc){
             Console.println("Current number: " + displayNumber);
-            Console.println("What operation should be done with the number?");
+            Console.println("What operation would you like to do? Type \'help\' for a list of functions.");
             funcChoice = Console.getStringInput(userChoice);
             funcChoice = funcChoice.toLowerCase();
-            if(funcChoice.equals("addition")){
+            if(funcChoice.equals("add")){
                 userInput = Console.getDoubleInput("Please enter a number to add to " + displayNumber);
                 displayNumber = addition(displayNumber, userInput);
 
             }
-            else if(funcChoice.equals("subtraction")){
+            else if(funcChoice.equals("subtract")){
 
             }
-            else if(funcChoice.equals("multiplication")){
+            else if(funcChoice.equals("multiply")){
 
             }
-            else if(funcChoice.equals("division")){
+            else if(funcChoice.equals("divide")){
 
             }
             else if(funcChoice.equals("square")){
@@ -50,6 +51,70 @@ public class MainApplication {
             }
             else if(funcChoice.equals("square root")){
 
+            }
+            else if(funcChoice.equals("sine")){
+                userInput = Console.getDoubleInput("Please enter a number to get the sine of: ");
+                displayNumber = getRadSine(userInput);
+            }
+            else if(funcChoice.equals("arc sine")){
+                userInput = Console.getDoubleInput("Please enter a number to get the arc sine of: ");
+                if(userInput > 1 || userInput < -1){
+                    Console.println("Please enter a value between -1 and 1!");
+                }
+                else {
+                    displayNumber = getRadArcSine(userInput);
+                }
+            }
+            else if(funcChoice.equals("cosine")){
+                userInput = Console.getDoubleInput("Please enter a number to get the cosine of: ");
+                displayNumber = getRadCosine(userInput);
+            }
+            else if(funcChoice.equals("arc cosine")){
+                userInput = Console.getDoubleInput("Please enter a number to get the arc cosine of: ");
+                if(userInput > 1 || userInput < -1){
+                    Console.println("Please enter a value between -1 and 1!");
+                }
+                else {
+                    displayNumber = getRadArcCosine(userInput);
+                }
+            }
+            else if(funcChoice.equals("tangent")){
+                userInput = Console.getDoubleInput("Please enter a number to get the tangent of: ");
+                displayNumber = getRadTangent(userInput);
+            }
+            else if(funcChoice.equals("arc tangent")){
+                userInput = Console.getDoubleInput("Please enter a number to get the arc tangent of: ");
+                displayNumber = getRadArcTangent(userInput);
+            }
+            else if(funcChoice.equals("log")){
+                userInput = Console.getDoubleInput("Please enter a number to get the log of: ");
+                if(userInput <= 0){
+                    Console.println("Please enter a positive value!");
+                }
+                else {
+                    displayNumber = getLog(userInput);
+                }
+            }
+            else if(funcChoice.equals("natural log")){
+                userInput = Console.getDoubleInput("Please enter a number to get the natural log of: ");
+                if(userInput <= 0){
+                    Console.println("Please enter a positive value!");
+                }
+                else {
+                    displayNumber = getNatLog(userInput);
+                }
+            }
+            else if(funcChoice.equals("inverse log")){
+                userInput = Console.getDoubleInput("Please enter a number to get the inverse log of: ");
+                displayNumber = getInvLog(userInput);
+            }
+            else if(funcChoice.equals("inverse natural log")){
+                userInput = Console.getDoubleInput("Please enter a number to get the inverse natural log of: ");
+                displayNumber = getInvNatLog(userInput);
+            }
+            else if(funcChoice.equals("factorial")){
+                userInput = Console.getDoubleInput("Please enter a number to get the factorial of: ");
+                displayNumber = getFactorial(userInput);
             }
             else if(funcChoice.equals("ms")){
                 currentMemoryValue = saveToMemory(currentMemoryValue,displayNumber);
@@ -61,6 +126,12 @@ public class MainApplication {
             }
             else if (funcChoice.equals("mc")){
                 displayNumber = recallMemory(currentMemoryValue);
+            }
+            else if (funcChoice.equals("help")){
+                Console.println("Please use one of the following commands:");
+                Console.println("Add, Subtract, Multiply, Divide\nSquare, Square Root, Factorial");
+                Console.println("Sine, Cosine, Tangent\nArc Sine, Arc Cosine, Arc Tangent");
+                Console.println("Log, Natural Log, Inverse Log");
             }
             else if(funcChoice.equals("exit")){
                 Console.println("Goodbye!");
