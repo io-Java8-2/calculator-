@@ -80,13 +80,13 @@ public class TrigTest {
         assertEquals(numFormat.format(1.142007E26), numFormat.format(test));
     }
 
-    /*
+
     @Test
     public void testFactorial(){
         Trig testTrig = new Trig();
         //DecimalFormat numFormat = new DecimalFormat("0.######E0");
-        double test = testTrig.getFactorial(4);
+        double test = Trig.getFactorial(4);
         assertEquals(24, test);
     }
-    */
+
 }
