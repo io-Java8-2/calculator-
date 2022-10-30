@@ -73,7 +73,9 @@ public class Trig {
         return result;
     }
 
+    /*
     public static double getFactorial(double x){
         return 0;
     }
+    */
 }
