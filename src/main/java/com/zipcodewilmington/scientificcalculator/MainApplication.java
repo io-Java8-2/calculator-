@@ -163,9 +163,10 @@ public class MainApplication {
             else if (funcChoice.equals("help")){
                 Console.println("Please use one of the following commands:");
                 Console.println("Add, Subtract, Multiply, Divide\nSquare, Square Root, Factorial");
+                Console.println("Power, Invert, Invert Sign");
                 Console.println("Sine, Cosine, Tangent\nArc Sine, Arc Cosine, Arc Tangent");
                 Console.println("Log, Natural Log, Inverse Log, Inverse Natural Log");
-                Console.println("qs, clear, current number");
+                Console.println("QS (Quick Switch Number), Clear, Current Number");
             }
             else if(funcChoice.equals("exit")){
                 Console.println("Goodbye!");
