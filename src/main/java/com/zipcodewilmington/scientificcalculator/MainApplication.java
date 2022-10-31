@@ -44,7 +44,7 @@ public class MainApplication {
                 displayNumber = subtraction(displayNumber, userInput);
             }
             else if(funcChoice.equals("multiply")){
-                userInput = Console.getDoubleInput("Please enter a number to multiply to" + displayNumber);
+                userInput = Console.getDoubleInput("Please enter a number to multiply to " + displayNumber);
                 displayNumber = multiplication(displayNumber, userInput);
             }
             else if(funcChoice.equals("divide")){
@@ -147,6 +147,19 @@ public class MainApplication {
                 displayNumber = getDisplay(displayNumber);
                 Console.println("The Current number is: " + displayNumber);
             }
+            else if(funcChoice.equals("power")){
+                userInput = Console.getDoubleInput("Please enter a number to have the current number raised to the power of");
+                displayNumber = raisePower(displayNumber, userInput);
+            }
+            else if(funcChoice.equals("invert")){
+                displayNumber = inverse(displayNumber);
+                Console.println("Number inverted");
+            }
+            else if(funcChoice.equals("invert sign")){
+                displayNumber = invertSign(displayNumber);
+                Console.println("Numbers sign has been inverted");
+            }
+
             else if (funcChoice.equals("help")){
                 Console.println("Please use one of the following commands:");
                 Console.println("Add, Subtract, Multiply, Divide\nSquare, Square Root, Factorial");
