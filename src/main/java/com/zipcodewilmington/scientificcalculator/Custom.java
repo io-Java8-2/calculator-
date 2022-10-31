@@ -1,4 +1,5 @@
 package com.zipcodewilmington.scientificcalculator;
+
 import java.text.DecimalFormat;
 
 public class Custom{
@@ -12,5 +13,15 @@ public class Custom{
 
     public static double getSlope(){
         return 0;
+    }
+    
+    public static double importPi(){
+        return Math.PI;
+    }
+    public static double randomNumber(double endRange){
+        double effectiveEndRange = endRange + 1;
+        double ranNum = Math.random() * effectiveEndRange;
+        return ranNum;
+
     }
 }
