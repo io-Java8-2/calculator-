@@ -1,5 +1,4 @@
 package com.zipcodewilmington.scientificcalculator;
-
 import static com.zipcodewilmington.scientificcalculator.CorePackage.*;
 import static com.zipcodewilmington.scientificcalculator.Memory.*;
 import static com.zipcodewilmington.scientificcalculator.Trig.*;
@@ -32,7 +31,7 @@ public class MainApplication {
         */
         while (endCalc){
             Console.println("Current number: " + displayNumber);
-            Console.println("What operation would you like to do? Type \'help\' for a list of functions.");
+            Console.println("What operation would you like to do? Type 'help' for a list of functions.");
             funcChoice = Console.getStringInput(userChoice);
             funcChoice = funcChoice.toLowerCase();
             if(funcChoice.equals("add")){
@@ -50,14 +49,19 @@ public class MainApplication {
             }
             else if(funcChoice.equals("divide")){
                 userInput = Console.getDoubleInput("Please enter a number to divide from " + displayNumber);
-                displayNumber = division(displayNumber, userInput);
+                if(userInput == 0){
+                    Console.println("Cannot divide by 0!");
+                }
+                else{
+                    displayNumber = division(displayNumber, userInput);
+                }
             }
             else if(funcChoice.equals("square")){
-                userInput = Console.getDoubleInput("Please enter a number to square " + displayNumber);
+                userInput = Console.getDoubleInput("Please enter a number to square: ");
                 displayNumber = sq(userInput);
             }
             else if(funcChoice.equals("square root")){
-                userInput = Console.getDoubleInput("Please enter a number ");
+                userInput = Console.getDoubleInput("Please enter a number: ");
                 displayNumber = sqrt(userInput);
 
             }
@@ -164,16 +168,23 @@ public class MainApplication {
                 displayNumber = invertSign(displayNumber);
                 Console.println("Numbers sign has been inverted");
             }
-
+            else if(funcChoice.equals("pi")){
+                displayNumber = importPi();
+            }
+            else if(funcChoice.equals("random")){
+                userInput = Console.getDoubleInput("Enter the upper limit for a random number: ");
+                displayNumber = randomNumber(userInput);
+                Console.println("Here's your random number: ");
+            }
             else if (funcChoice.equals("help")){
                 Console.println("Please use one of the following commands:");
-                Console.println("Add, Subtract, Multiply, Divide\nSquare, Square Root, Factorial");
-                Console.println("Power, Invert, Invert Sign");
-                Console.println("Sine, Cosine, Tangent\nArc Sine, Arc Cosine, Arc Tangent");
-                Console.println("Log, Natural Log, Inverse Log, Inverse Natural Log");
-
-                Console.println("Circumference, Slope");
-                Console.println("QS (Quick Switch Number), Clear, Current Number");
+                Console.println("[Add] [Subtract] [Multiply] [Divide]\n[Square] [Square Root] [Factorial]");
+                Console.println("[Power] [Invert] [Invert Sign]");
+                Console.println("[Sine] [Cosine] [Tangent]\n[Arc Sine] [Arc Cosine] [Arc Tangent]");
+                Console.println("[Log] [Natural Log] [Inverse Log] [Inverse Natural Log]");
+                Console.println("[Circumference] [Pi] [Random]");
+                Console.println("[QS (Quick Switch Number)] [Clear] [Current Number]");
+                Console.println("Type 'exit' to close the calculator");
             }
             else if(funcChoice.equals("exit")){
                 Console.println("Goodbye!");
