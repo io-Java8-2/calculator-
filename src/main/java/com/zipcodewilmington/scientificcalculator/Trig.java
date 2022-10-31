@@ -77,9 +77,9 @@ public class Trig {
     public static double getFactorial(double x){
         double factorial = x;
 
-//        for (double i = 2; i <= x; i ++){
-//            factorial = factorial * i;
-//        }
+        if (x == 0){
+            return 1;
+        }
         double i = 2;
         while(i < x){
             factorial *= i;
