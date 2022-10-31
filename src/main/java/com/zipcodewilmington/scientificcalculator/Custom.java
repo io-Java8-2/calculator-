@@ -10,10 +10,6 @@ public class Custom{
         Console.println("For a circle with a radius of: " + x + "\nThe circumference equals: " + rounded);
         return rounded;
     }
-
-    public static double getSlope(){
-        return 0;
-    }
     
     public static double importPi(){
         return Math.PI;
@@ -21,6 +17,7 @@ public class Custom{
     public static double randomNumber(double endRange){
         double effectiveEndRange = endRange + 1;
         double ranNum = Math.random() * effectiveEndRange;
+        ranNum = Math.round(ranNum);
         return ranNum;
 
     }

@@ -4,6 +4,7 @@ import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestCustom{
+    @Test
     public void testPi(){
         Custom testCustom = new Custom();
         double test = testCustom.importPi();
