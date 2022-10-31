@@ -3,6 +3,7 @@ package com.zipcodewilmington.scientificcalculator;
 import static com.zipcodewilmington.scientificcalculator.CorePackage.*;
 import static com.zipcodewilmington.scientificcalculator.Memory.*;
 import static com.zipcodewilmington.scientificcalculator.Trig.*;
+import static com.zipcodewilmington.scientificcalculator.Display.*;
 
 /**
  * Created by leon on 2/9/18.
@@ -134,11 +135,24 @@ public class MainApplication {
             else if (funcChoice.equals("mc")){
                 displayNumber = recallMemory(currentMemoryValue);
             }
+            else if (funcChoice.equals("qs")){
+                userInput = Console.getDoubleInput("Please enter a new number:");
+                displayNumber = qs(displayNumber,userInput);
+            }
+            else if(funcChoice.equals("clear")){
+                displayNumber = clear(displayNumber);
+                Console.println("Display number was cleared");
+            }
+            else if(funcChoice.equals("current number")){
+                displayNumber = getDisplay(displayNumber);
+                Console.println("The Current number is: " + displayNumber);
+            }
             else if (funcChoice.equals("help")){
                 Console.println("Please use one of the following commands:");
                 Console.println("Add, Subtract, Multiply, Divide\nSquare, Square Root, Factorial");
                 Console.println("Sine, Cosine, Tangent\nArc Sine, Arc Cosine, Arc Tangent");
                 Console.println("Log, Natural Log, Inverse Log");
+                Console.println("qs, clear, current number");
             }
             else if(funcChoice.equals("exit")){
                 Console.println("Goodbye!");
