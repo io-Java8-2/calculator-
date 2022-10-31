@@ -43,15 +43,20 @@ public class MainApplication {
                 displayNumber = subtraction(displayNumber, userInput);
             }
             else if(funcChoice.equals("multiply")){
-
+                userInput = Console.getDoubleInput("Please enter a number to multiply to" + displayNumber);
+                displayNumber = multiplication(displayNumber, userInput);
             }
             else if(funcChoice.equals("divide")){
-
+                userInput = Console.getDoubleInput("Please enter a number to divide from " + displayNumber);
+                displayNumber = division(displayNumber, userInput);
             }
             else if(funcChoice.equals("square")){
-
+                userInput = Console.getDoubleInput("Please enter a number to square " + displayNumber);
+                displayNumber = sq(userInput);
             }
             else if(funcChoice.equals("square root")){
+                userInput = Console.getDoubleInput("Please enter a number ");
+                displayNumber = sqrt(userInput);
 
             }
             else if(funcChoice.equals("sine")){
