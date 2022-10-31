@@ -4,6 +4,7 @@ import static com.zipcodewilmington.scientificcalculator.CorePackage.*;
 import static com.zipcodewilmington.scientificcalculator.Memory.*;
 import static com.zipcodewilmington.scientificcalculator.Trig.*;
 import static com.zipcodewilmington.scientificcalculator.Display.*;
+import static com.zipcodewilmington.scientificcalculator.Custom.*;
 
 /**
  * Created by leon on 2/9/18.
@@ -124,6 +125,10 @@ public class MainApplication {
                 userInput = Console.getDoubleInput("Please enter a number to get the factorial of: ");
                 displayNumber = getFactorial(userInput);
             }
+            else if(funcChoice.equals("circumference")){
+                userInput = Console.getDoubleInput("Please enter a number for the radius of a circle: ");
+                displayNumber = getCircumference(userInput);
+            }
             else if(funcChoice.equals("ms")){
                 currentMemoryValue = saveToMemory(currentMemoryValue,displayNumber);
                 Console.println("Value saved to memory");
@@ -165,6 +170,7 @@ public class MainApplication {
                 Console.println("Add, Subtract, Multiply, Divide\nSquare, Square Root, Factorial");
                 Console.println("Sine, Cosine, Tangent\nArc Sine, Arc Cosine, Arc Tangent");
                 Console.println("Log, Natural Log, Inverse Log, Inverse Natural Log");
+                Console.println("Circumference, Slope");
                 Console.println("qs, clear, current number");
             }
             else if(funcChoice.equals("exit")){
