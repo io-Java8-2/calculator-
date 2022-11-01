@@ -184,6 +184,7 @@ public class MainApplication {
                 Console.println("[Log] [Natural Log] [Inverse Log] [Inverse Natural Log]");
                 Console.println("[Circumference] [Pi] [Random]");
                 Console.println("[QS (Quick Switch Number)] [Clear] [Current Number]");
+                Console.println("[MS (Memory Save)] [MC (Memory Recall)] [MR (Memory Reset)]");
                 Console.println("Type 'exit' to close the calculator");
             }
             else if(funcChoice.equals("exit")){
