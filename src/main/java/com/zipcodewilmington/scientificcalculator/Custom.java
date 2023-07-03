@@ -19,6 +19,8 @@ public class Custom{
         double ranNum = Math.random() * effectiveEndRange;
         ranNum = Math.round(ranNum);
         return ranNum;
-
+    }
+    public static double convertToKm(double miles){
+        return miles * 1.69;
     }
 }
